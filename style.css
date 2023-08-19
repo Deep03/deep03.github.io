@@ -1,24 +1,26 @@
 body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure the body takes up the full viewport height */
   background-color: black;
-  /* position:fixed; */
 }
 
 .circle {
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-}
-.circle img {
-    border-radius: 50%;
-    display: block;
-    border:1px solid #000;
-    height: 100%;
-    width: 100%;
+  width: 562.5px;
+  height: 562.5px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
 }
 
-.center {
-  /* padding-top: 30%; */
-  align-items: center;
+.circle img {
+  border-radius: 50%;
+  display: block;
+  border: 1px solid #000;
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
@@ -27,7 +29,7 @@ h1 {
 }
 
 @media (max-width: 767px) {
-  .center-cell{
-    padding-top: 22%
+  .center-cell {
+    padding-top: 22%;
   }
 }

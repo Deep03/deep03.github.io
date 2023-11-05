@@ -1,10 +1,7 @@
 # Portfolio - Deep Lekhak
 
 ## Introduction
-Hello! My name is Deep Lekhak, an enthusiastic engineer with a passion for mathematics and a strong desire to explore the world of computer science. I believe in applying the principles of engineering to solve real-world problems and create innovative solutions. Here's a bit about me:
-
-- **Name:** Deep Lekhak
-- **Age:** 20
+Hello! My name is Deep Lekhak, an enthusiastic engineer with a passion for mathematics and a strong desire to explore the world of computer science. I believe in applying the principles of engineering to solve real-world problems and create innovative solutions.
 
 ## Bio
 I am currently majoring in mathematics, and my journey in this field is driven by two primary motivations:

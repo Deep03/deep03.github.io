@@ -21,20 +21,24 @@ body {
 
 
 }
-
-
 .bio h1 {
   color: white;
   font-size: 50px;
-  justify-content: flex-end; /* Align to the right */
+  width: 500px;
+  justify-content: flex; /* Align to the right */
+  margin-top: 200px;
+}
+.links {
+  margin: 0 auto;
 }
 
 .circle-div {
   display: flex;
   justify-content: flex-end; /* Align to the right */
   align-items: center;
-  flex: 1; /* Fill remaining space */
+  width: 500px;
   padding: 20px; /* Add padding for spacing */
+  margin-bottom: 400px;
 }
 
 .circle {
@@ -108,69 +112,4 @@ body {
   }
 }
 
-/*  */
-/* styles.css */
-  .bio {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  
-  .terminal {
-      width: 500px; /* Set fixed width */
-      height: 300px; /* Set fixed height */
-      border: 2px solid #fff;
-      border-radius: 10px;
-      padding: 20px;
-      overflow: auto; /* Add overflow:auto to enable scrolling if content exceeds dimensions */
-  }
-  
-  .terminal-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-  }
-  
-  .terminal-button-close{
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background-color: red;
-      cursor: pointer;
-  }
-  .terminal-button-minimize  {
-      width: 15px;
-      border-radius: 50%;
-      background-color: grey;
-      cursor: pointer;
-      margin-right: 499px;
-  }
-  
-  .terminal-button-maximize  {
-      width: 15px;
-      border-radius: 50%;
-      background-color: green;
-      cursor: pointer;
-  }
-  
-  .terminal-body {
-      font-family: monospace;
-  }
-  
-  .username {
-      color: #00ff00; /* Green color for username */
-  }
-  
-  .prompt {
-      color: #ffcc00; /* Yellow color for prompt */
-  }
-  
-  .command {
-      color: #ffffff; /* White color for command */
-  }
-  
-  .output {
-      color: #cccccc; /* Light gray color for output */
-  }
-  
   

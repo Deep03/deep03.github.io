@@ -43,9 +43,9 @@ body {
 
 .bio-div {
   display: flex;
-  width: 1406;
-  height: 100vh;
-  justify-content: flex-end; /* Align to the right */
+  width: 100%;
+  height: 100%;
+  justify-content: center; /* Align to the right */
 
 
 }

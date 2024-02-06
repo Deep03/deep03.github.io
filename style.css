@@ -66,6 +66,7 @@ body {
   width: 500px;
   justify-content: flex;
   margin-top: 200px;
+  
 }
 .links {
   width: 50%;
@@ -164,7 +165,7 @@ body {
   border-radius:  5px; /* Rounded corners for a smoother look */
   box-shadow:  0  0  10px rgba(0,  0,  0,  0.5); /* A soft shadow for depth */
   font-family: 'Roboto', sans-serif; /* Using the Roboto font imported earlier */
-  font-weight:  500; /* Medium weight for readability */
+  font-weight:  100; /* Medium weight for readability */
   font-size:  24px; /* Adjust font size as needed */
   text-align: center; /* Center the text inside the div */
   transition: transform  0.4s, box-shadow  0.4s;
@@ -201,7 +202,7 @@ body {
   border-radius:  5px; /* Rounded corners for a smoother look */
   box-shadow:  0  0  10px rgba(0,  0,  0,  0.5); /* A soft shadow for depth */
   font-family: 'Roboto', sans-serif; /* Using the Roboto font imported earlier */
-  font-weight:  500; /* Medium weight for readability */
+  font-weight:  100; /* Medium weight for readability */
   font-size:  24px; /* Adjust font size as needed */
   text-align: center; /* Center the text inside the div */
   transition: transform  0.4s, box-shadow  0.4s;

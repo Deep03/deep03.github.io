@@ -8,9 +8,9 @@ import { Projects } from './pages/Projects';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-terminal-bg text-terminal-text relative overflow-x-hidden">
+      <div style={{ height: '100vh', overflowY: 'auto', overscrollBehavior: 'none', WebkitOverflowScrolling: 'touch', backgroundColor: 'black' }}>
         <Navigation />
-        <main className="relative z-10">
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<Blog />} />
@@ -21,5 +21,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;

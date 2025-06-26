@@ -105,7 +105,7 @@ export const Home: React.FC = () => {
             </h1>
             <div className="font-mono text-xl md:text-2xl text-terminal-muted mb-8">
               <TypewriterText 
-                text="Backend Developer | Code Crusader | Coffee Enthusiast"
+                text="Backend Developer | Machine Learning Dabbler | Coffee Enthusiast"
                 delay={1500}
                 speed={80}
               />

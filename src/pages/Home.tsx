@@ -10,15 +10,13 @@ import {
   Database, 
   Code, 
   Brain,
-  Coffee,
-  Terminal,
   GitBranch,
   Layers,
   Cpu,
   Gamepad2,
   Monitor,
   Cloud,
-  BarChart3
+  BarChart3,
 } from 'lucide-react';
 
 export const Home: React.FC = () => {
@@ -167,7 +165,7 @@ export const Home: React.FC = () => {
                 $ cat about.txt
               </h2>
             </motion.div>
-
+{/* 
             <div className="grid md:grid-cols-2 gap-8 mb-16">
               <motion.div variants={itemVariants}>
                 <GlowCard>
@@ -175,10 +173,10 @@ export const Home: React.FC = () => {
                     The Journey
                   </h3>
                   <p className="text-terminal-muted leading-relaxed">
-                    Not-so-average student by day, Code Crusader by night. From pixels 
-                    to algorithms, I'm mastering backend development, machine learning, 
-                    and the art of brewing the perfect coffee.
+                    Am I am student? Am I am coder? Am I interested in machine learning? Am I just a backend developer?
+                    Turns out,...I am all of them.
                   </p>
+                  <p className="text-terminal-muted leading-relaxed">I am an engineer.</p>
                 </GlowCard>
               </motion.div>
 
@@ -190,11 +188,44 @@ export const Home: React.FC = () => {
                   <p className="text-terminal-muted leading-relaxed">
                     Buckle up, Adventurer, and join me on this epic quest to bridge 
                     the gap between imagination and reality. Building scalable systems 
-                    that power the digital world ⛵️
+                    that power the digital world.
                   </p>
                 </GlowCard>
               </motion.div>
-            </div>
+            </div> */}
+
+{/* <div className="grid md:grid-cols-2 justify-center mb-16">
+                    <motion.div variants={itemVariants}>
+                    <GlowCard>
+                      <h3 className="text-xl font-semibold mb-4 text-terminal-green font-mono">
+                        The Journey
+                      </h3>
+                      <p className="text-terminal-muted leading-relaxed">
+                        Am I am student? Am I am coder? Am I interested in machine learning? Am I just a backend developer?
+                        Turns out,...I am all of them.
+                      </p>
+                      <p className="text-terminal-muted leading-relaxed">I am an engineer.</p>
+                    </GlowCard>
+                  </motion.div>
+                </div> */}
+                <div className="mb-16 flex justify-center">
+  <div className="w-full md:w-1/2">
+    <motion.div variants={itemVariants}>
+      <GlowCard>
+        <h3 className="text-xl font-semibold mb-4 text-terminal-green font-mono">
+          about.txt
+        </h3>
+        <p className="text-terminal-muted leading-relaxed">
+          Am I am student? Am I am coder? Am I interested in machine learning? Am I just a backend developer?
+          Turns out,...I am all of them.
+        </p>
+        <p className="text-terminal-muted leading-relaxed">I am an engineer.</p>
+      </GlowCard>
+    </motion.div>
+  </div>
+</div>
+
+
 
             {/* Skills Sections */}
             <motion.div variants={itemVariants}>

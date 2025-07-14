@@ -1,13 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { GlowCard } from '../components/GlowCard';
 import { Calendar, Clock, Tag, ArrowRight } from 'lucide-react';
 
 export const Blog: React.FC = () => {
-  // Mock blog posts - ready for CMS integration
+  // Blog posts metadata - this will be where you manage your blog posts
   const blogPosts = [
     {
       id: 1,
+      slug: 'building-scalable-backend-systems',
       title: 'Building Scalable Backend Systems: Lessons from the Trenches',
       excerpt: 'Deep dive into the architectural decisions and trade-offs involved in building systems that scale from hundreds to millions of users. Exploring microservices, database sharding, and event-driven architectures.',
       date: '2024-03-15',
@@ -17,49 +19,44 @@ export const Blog: React.FC = () => {
     },
     {
       id: 2,
-      title: 'The Art of API Design: RESTful Principles and Beyond',
-      excerpt: 'A comprehensive guide to designing APIs that developers love to use. Covering REST principles, GraphQL alternatives, and real-world examples from popular APIs.',
-      date: '2024-03-08',
-      readTime: '6 min read',
-      tags: ['API', 'REST', 'Design'],
-      featured: false,
-    },
-    {
-      id: 3,
-      title: 'Database Optimization: From Slow Queries to Lightning Fast',
-      excerpt: 'Practical strategies for optimizing database performance. Indexing strategies, query optimization, and when to consider database migrations.',
-      date: '2024-02-28',
-      readTime: '10 min read',
-      tags: ['Database', 'Performance', 'SQL'],
-      featured: false,
-    },
-    {
-      id: 4,
-      title: 'Machine Learning in Production: Beyond the Jupyter Notebook',
-      excerpt: 'Taking ML models from experimentation to production. MLOps, model versioning, monitoring, and maintaining AI systems at scale.',
-      date: '2024-02-20',
-      readTime: '12 min read',
-      tags: ['Machine Learning', 'MLOps', 'Production'],
-      featured: true,
-    },
-    {
-      id: 5,
-      title: 'The Modern Developer Workflow: Tools and Practices',
-      excerpt: 'An opinionated guide to developer productivity. From terminal setup to CI/CD pipelines, exploring tools that make coding more efficient.',
-      date: '2024-02-10',
+      slug: 'rsa-encryption-from-scratch',
+      title: 'Building RSA Encryption from Scratch in Java',
+      excerpt: 'A deep dive into implementing RSA encryption from first principles in Java — including prime generation, key persistence, modular arithmetic, and encryption logic.',
+      date: '2025-06-28',
       readTime: '7 min read',
-      tags: ['Productivity', 'Tools', 'Workflow'],
+      tags: ['Java', 'Cryptography', 'Security'],
       featured: false,
     },
-    {
-      id: 6,
-      title: 'Security First: Building Secure Backend Applications',
-      excerpt: 'Essential security practices for backend developers. Authentication, authorization, data encryption, and common vulnerability prevention.',
-      date: '2024-01-25',
-      readTime: '9 min read',
-      tags: ['Security', 'Authentication', 'Best Practices'],
-      featured: false,
-    },
+      {
+    id: 3,
+    slug: 'facenet-model-implementation',
+    title: 'FaceNet Implementation From Scratch',
+    excerpt: 'A full walkthrough of how I implemented FaceNet using TensorFlow and triplet loss to build a real-time face authentication system from scratch.',
+    date: '2024-04-12',
+    readTime: '8 min read',
+    tags: ['Deep Learning', 'TensorFlow', 'Face Recognition'],
+    featured: true
+  },
+  {
+  id: 4,
+  slug: 'simple-python-http-server',
+  title: 'A Simple HTTP Server to Understand the Basics of Networking',
+  excerpt: 'A low-level TCP server-client implementation in Python using sockets. Learn the basics of networking and how real servers handle data under the hood.',
+  date: '2024-04-20',
+  readTime: '5 min read',
+  tags: ['Networking', 'Python', 'Sockets'],
+  featured: false
+},
+{
+  id: 5,
+  slug: 'automate-spotify-playlist-downloads-python',
+  title: 'Automate Spotify Playlist Downloads Using YouTube and Python',
+  excerpt: 'A Python script that converts Spotify playlists into local MP3 files by searching YouTube, downloading videos, extracting audio, and tagging metadata.',
+  date: '2024-04-20',
+  readTime: '9 min read',
+  tags: ['Python', 'Spotify', 'YouTube', 'Automation', 'Audio Processing'],
+  featured: false
+}
   ];
 
   const containerVariants = {
@@ -134,47 +131,49 @@ export const Blog: React.FC = () => {
               .filter(post => post.featured)
               .map((post) => (
                 <motion.div key={post.id} variants={itemVariants}>
-                  <GlowCard className="h-full cursor-pointer group">
-                    <div className="flex flex-col h-full">
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="px-3 py-1 text-xs bg-terminal-green/20 text-terminal-green rounded-full font-mono">
-                          Featured
-                        </span>
-                        <div className="flex items-center text-terminal-muted text-sm font-mono">
-                          <Clock className="w-4 h-4 mr-1" />
-                          {post.readTime}
-                        </div>
-                      </div>
-
-                      <h3 className="text-xl font-bold mb-3 text-terminal-text group-hover:text-terminal-green transition-colors font-mono">
-                        {post.title}
-                      </h3>
-
-                      <p className="text-terminal-muted leading-relaxed mb-6 flex-grow">
-                        {post.excerpt}
-                      </p>
-
-                      <div className="flex items-center justify-between mt-auto">
-                        <div className="flex items-center text-terminal-muted text-sm font-mono">
-                          <Calendar className="w-4 h-4 mr-2" />
-                          {formatDate(post.date)}
-                        </div>
-                        <ArrowRight className="w-4 h-4 text-terminal-green opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </div>
-
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        {post.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="flex items-center px-2 py-1 text-xs bg-terminal-bg border border-terminal-border rounded-md text-terminal-blue font-mono"
-                          >
-                            <Tag className="w-3 h-3 mr-1" />
-                            {tag}
+                  <Link to={`/blog/${post.slug}`}>
+                    <GlowCard className="h-full cursor-pointer group">
+                      <div className="flex flex-col h-full">
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="px-3 py-1 text-xs bg-terminal-green/20 text-terminal-green rounded-full font-mono">
+                            Featured
                           </span>
-                        ))}
+                          <div className="flex items-center text-terminal-muted text-sm font-mono">
+                            <Clock className="w-4 h-4 mr-1" />
+                            {post.readTime}
+                          </div>
+                        </div>
+
+                        <h3 className="text-xl font-bold mb-3 text-terminal-text group-hover:text-terminal-green transition-colors font-mono">
+                          {post.title}
+                        </h3>
+
+                        <p className="text-terminal-muted leading-relaxed mb-6 flex-grow">
+                          {post.excerpt}
+                        </p>
+
+                        <div className="flex items-center justify-between mt-auto">
+                          <div className="flex items-center text-terminal-muted text-sm font-mono">
+                            <Calendar className="w-4 h-4 mr-2" />
+                            {formatDate(post.date)}
+                          </div>
+                          <ArrowRight className="w-4 h-4 text-terminal-green opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </div>
+
+                        <div className="flex flex-wrap gap-2 mt-4">
+                          {post.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="flex items-center px-2 py-1 text-xs bg-terminal-bg border border-terminal-border rounded-md text-terminal-blue font-mono"
+                            >
+                              <Tag className="w-3 h-3 mr-1" />
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </GlowCard>
+                    </GlowCard>
+                  </Link>
                 </motion.div>
               ))}
           </motion.div>
@@ -202,51 +201,53 @@ export const Blog: React.FC = () => {
           >
             {blogPosts.map((post) => (
               <motion.div key={post.id} variants={itemVariants}>
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  className="bg-terminal-surface border border-terminal-border rounded-lg p-6 hover:border-terminal-green/50 transition-all duration-300 cursor-pointer group h-full flex flex-col"
-                >
-                  {post.featured && (
-                    <span className="inline-block px-2 py-1 text-xs bg-terminal-green/20 text-terminal-green rounded-full font-mono mb-3 w-fit">
-                      Featured
-                    </span>
-                  )}
-
-                  <h3 className="text-lg font-bold mb-3 text-terminal-text group-hover:text-terminal-green transition-colors font-mono line-clamp-2">
-                    {post.title}
-                  </h3>
-
-                  <p className="text-terminal-muted text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
-                    {post.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between text-xs text-terminal-muted font-mono mb-4">
-                    <div className="flex items-center">
-                      <Calendar className="w-3 h-3 mr-1" />
-                      {formatDate(post.date)}
-                    </div>
-                    <div className="flex items-center">
-                      <Clock className="w-3 h-3 mr-1" />
-                      {post.readTime}
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-1">
-                    {post.tags.slice(0, 2).map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-1 text-xs bg-terminal-bg border border-terminal-border rounded-md text-terminal-blue font-mono"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                    {post.tags.length > 2 && (
-                      <span className="px-2 py-1 text-xs bg-terminal-bg border border-terminal-border rounded-md text-terminal-muted font-mono">
-                        +{post.tags.length - 2}
+                <Link to={`/blog/${post.slug}`}>
+                  <motion.div
+                    whileHover={{ y: -5 }}
+                    className="bg-terminal-surface border border-terminal-border rounded-lg p-6 hover:border-terminal-green/50 transition-all duration-300 cursor-pointer group h-full flex flex-col"
+                  >
+                    {post.featured && (
+                      <span className="inline-block px-2 py-1 text-xs bg-terminal-green/20 text-terminal-green rounded-full font-mono mb-3 w-fit">
+                        Featured
                       </span>
                     )}
-                  </div>
-                </motion.div>
+
+                    <h3 className="text-lg font-bold mb-3 text-terminal-text group-hover:text-terminal-green transition-colors font-mono line-clamp-2">
+                      {post.title}
+                    </h3>
+
+                    <p className="text-terminal-muted text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
+                      {post.excerpt}
+                    </p>
+
+                    <div className="flex items-center justify-between text-xs text-terminal-muted font-mono mb-4">
+                      <div className="flex items-center">
+                        <Calendar className="w-3 h-3 mr-1" />
+                        {formatDate(post.date)}
+                      </div>
+                      <div className="flex items-center">
+                        <Clock className="w-3 h-3 mr-1" />
+                        {post.readTime}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-1">
+                      {post.tags.slice(0, 2).map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-1 text-xs bg-terminal-bg border border-terminal-border rounded-md text-terminal-blue font-mono"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      {post.tags.length > 2 && (
+                        <span className="px-2 py-1 text-xs bg-terminal-bg border border-terminal-border rounded-md text-terminal-muted font-mono">
+                          +{post.tags.length - 2}
+                        </span>
+                      )}
+                    </div>
+                  </motion.div>
+                </Link>
               </motion.div>
             ))}
           </motion.div>

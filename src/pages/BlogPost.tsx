@@ -51,7 +51,24 @@ export const BlogPost: React.FC = () => {
     tags: ['Python', 'Spotify', 'YouTube', 'Automation', 'Audio Processing'],
     author: 'Deep Lekhak'
     },
-  };
+    'automating-email-sorting-gmail-api': {
+  title: 'Automating Email Sorting with Gmail API and Python',
+  date: '2025-07-14',
+  readTime: '8 min read',
+  tags: ['Email', 'Gmail API', 'Python', 'Automation'],
+  author: 'Deep Lekhak'
+},
+'peer-circle' :{
+title: "Building a Secure File Transfer Web App with React, Node.js, and PeerJS",
+date: '2025-07-14',
+author: "Deep Lekhak",
+readTime: "10 min read",
+tags: ["File Sharing", "Peer-to-Peer", "React", "Node.js", "MongoDB"]
+}
+
+};
+
+
 
   const postMetadata = slug ? blogPostsMetadata[slug] : null;
 

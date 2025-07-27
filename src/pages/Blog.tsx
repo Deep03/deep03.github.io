@@ -56,7 +56,29 @@ export const Blog: React.FC = () => {
   readTime: '9 min read',
   tags: ['Python', 'Spotify', 'YouTube', 'Automation', 'Audio Processing'],
   featured: false
+},
+{
+  id: 6,
+  slug: 'automating-email-sorting-gmail-api',
+  title: 'Automating Email Sorting with Gmail API and Python',
+  excerpt: 'Build a complete email classification pipeline using Gmail API and Python. Automatically fetch, clean, and label emails with custom logic.',
+  date: '2025-07-14',
+  readTime: '8 min read',
+  tags: ['Email', 'Gmail API', 'Python', 'Automation'],
+  featured: false
 }
+, {
+  id: 7,
+  slug: 'peer-circle',
+  title: 'Building a Secure File Transfer Web App with React, Node.js, and PeerJS',
+  excerpt: 'A full-stack web application that enables users to send and receive files over peer-to-peer connections using WebRTC. Built with React and Node.js, and secured by user authentication via MongoDB.',
+  date: '2025-07-14',
+  readTime: '10 min read',
+  tags: ["File Sharing", "Peer-to-Peer", "React", "Node.js", "MongoDB"],
+  featured: true
+}
+
+
   ];
 
   const containerVariants = {

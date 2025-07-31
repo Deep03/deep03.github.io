@@ -6,19 +6,8 @@ import { Calendar, Clock, Tag, ArrowRight } from 'lucide-react';
 
 export const Blog: React.FC = () => {
   // Blog posts metadata - this will be where you manage your blog posts
-  const blogPosts = [
-    {
+  const blogPosts = [ {
       id: 1,
-      slug: 'building-scalable-backend-systems',
-      title: 'Building Scalable Backend Systems: Lessons from the Trenches',
-      excerpt: 'Deep dive into the architectural decisions and trade-offs involved in building systems that scale from hundreds to millions of users. Exploring microservices, database sharding, and event-driven architectures.',
-      date: '2024-03-15',
-      readTime: '8 min read',
-      tags: ['Backend', 'Scalability', 'Architecture'],
-      featured: true,
-    },
-    {
-      id: 2,
       slug: 'rsa-encryption-from-scratch',
       title: 'Building RSA Encryption from Scratch in Java',
       excerpt: 'A deep dive into implementing RSA encryption from first principles in Java — including prime generation, key persistence, modular arithmetic, and encryption logic.',
@@ -28,7 +17,7 @@ export const Blog: React.FC = () => {
       featured: false,
     },
       {
-    id: 3,
+    id: 2,
     slug: 'facenet-model-implementation',
     title: 'FaceNet Implementation From Scratch',
     excerpt: 'A full walkthrough of how I implemented FaceNet using TensorFlow and triplet loss to build a real-time face authentication system from scratch.',
@@ -38,7 +27,7 @@ export const Blog: React.FC = () => {
     featured: true
   },
   {
-  id: 4,
+  id: 3,
   slug: 'simple-python-http-server',
   title: 'A Simple HTTP Server to Understand the Basics of Networking',
   excerpt: 'A low-level TCP server-client implementation in Python using sockets. Learn the basics of networking and how real servers handle data under the hood.',
@@ -48,7 +37,7 @@ export const Blog: React.FC = () => {
   featured: false
 },
 {
-  id: 5,
+  id: 4,
   slug: 'automate-spotify-playlist-downloads-python',
   title: 'Automate Spotify Playlist Downloads Using YouTube and Python',
   excerpt: 'A Python script that converts Spotify playlists into local MP3 files by searching YouTube, downloading videos, extracting audio, and tagging metadata.',
@@ -58,7 +47,7 @@ export const Blog: React.FC = () => {
   featured: false
 },
 {
-  id: 6,
+  id: 5,
   slug: 'automating-email-sorting-gmail-api',
   title: 'Automating Email Sorting with Gmail API and Python',
   excerpt: 'Build a complete email classification pipeline using Gmail API and Python. Automatically fetch, clean, and label emails with custom logic.',
@@ -68,13 +57,22 @@ export const Blog: React.FC = () => {
   featured: false
 }
 , {
-  id: 7,
+  id: 6,
   slug: 'peer-circle',
   title: 'Building a Secure File Transfer Web App with React, Node.js, and PeerJS',
   excerpt: 'A full-stack web application that enables users to send and receive files over peer-to-peer connections using WebRTC. Built with React and Node.js, and secured by user authentication via MongoDB.',
   date: '2025-07-14',
   readTime: '10 min read',
   tags: ["File Sharing", "Peer-to-Peer", "React", "Node.js", "MongoDB"],
+  featured: true
+}, {
+  id: 6,
+  slug: 'sketch-app',
+  title: 'Building a Real-Time Collaborative Sketch App with React and Firebase',
+  excerpt: 'A collaborative drawing web app built with React and Firebase. Explore drawing sync, export functionality, and client-specific stroke tracking in real-time.',
+  date: '2025-07-14',
+  readTime: '9 min read',
+  tags: ['Collaboration', 'React', 'Firebase', 'Canvas API', 'Web App'],
   featured: true
 }
 
